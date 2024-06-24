@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Minha lista:</h2>
+    <ul>
+    </ul>
+    <input >
+    <button onclick="adicionar()">add</button>
+    <script>
+
+        const tarefas = ["coisa 1", "coisa 2", "coisa 3"]
+
+        function adicionar() {
+            const input = document.querySelector("input")
+            tarefas.push(input.value)
+            input.value = ""
+            renderizar()
+        }
+
+        function renderizar() {
+            const ul = document.querySelector("ul")
+            ul.innerText = ""
+
+            // while
+            let index = 0
+            while(index < tarefas.length) {
+                const li = document.createElement("li")
+                li.innerText = tarefas[indice]
+                ul.appendChild(li)
+                index = index + 1
+            }
+
+            // for
+            for (let i = 0; i < tarefas.length; i = i + 1) {
+                const li = document.createElement("li")
+                li.innerText = tarefas[i]
+                ul.appendChild(li)
+            }
+
+            // forEach
+            tarefas.forEach(function(tarefa){
+                const li = document.createElement("li")
+                li.innerText = tarefa
+                ul.appendChild(li)
+            })
+
+        }
+
+        renderizar()
+    </script>
+</body>
+</html>
